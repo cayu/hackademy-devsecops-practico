@@ -3,9 +3,7 @@
 name: Running SAST tools
 
 on:
-  push:
-    branches:
-      - main
+  workflow_call:
 
 permissions:
   contents: read
@@ -62,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - name: Run npm install
+      - name: Run npm install before scanning
         run: npm install
       - name: Run Snyk
         uses: snyk/actions/node@master
