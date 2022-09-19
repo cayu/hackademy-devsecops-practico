@@ -61,15 +61,15 @@ jobs:
     name: Snyk scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: Run Snyk
         uses: snyk/actions/node@master
-        continue-on-error: true
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
         with:
           args: >
             --all-projects
             --sarif-file-output=snyk-code.sarif
             --file=package.json
+        continue-on-error: true
 
