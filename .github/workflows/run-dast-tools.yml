@@ -4,6 +4,9 @@ name: Running DAST tools
 
 on:
   workflow_call:
+    secrets:
+      HAWK_API_KEY:
+        required: true
 
 jobs:
   hawkscan:
