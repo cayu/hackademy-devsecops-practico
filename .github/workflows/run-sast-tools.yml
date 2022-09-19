@@ -62,6 +62,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
+      - name: Run npm install
+        run: npm install
       - name: Run Snyk
         uses: snyk/actions/node@master
         env:
