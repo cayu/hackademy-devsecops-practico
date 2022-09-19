@@ -1,0 +1,18 @@
+# DAST Workflow for the DevSecOps & Cloud Security course
+
+name: Running DAST tools
+
+on:
+  workflow_call:
+
+jobs:
+  hawkscan:
+    name: HawkScan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Run HawkScan
+        uses: stackhawk/hawkscan-action@v2.0.0
+        with:
+          apiKey: ${{ secrets.HAWK_API_KEY }}

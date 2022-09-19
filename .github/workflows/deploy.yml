@@ -1,4 +1,4 @@
-name: Deploy Vulnerable Application                                  # workflow name
+name: Deploy Vulnerable Application
 
 on:
   push:
@@ -22,3 +22,7 @@ jobs:
           heroku_email: "maximroc@gmail.com"
           remote_branch: "master"
           usedocker: true
+
+  run-dast-workflow:
+    needs: deploy-heroku
+    uses: ./.github/workflows/run-dast-tools.yml
