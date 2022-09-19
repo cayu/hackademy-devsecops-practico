@@ -23,8 +23,8 @@ jobs:
 #          remote_branch: "master"
 #          usedocker: true
 
-  run-dast-workflow:
+#  run-dast-workflow:
 #    needs: deploy-heroku
-    uses: ./.github/workflows/run-dast-tools.yml
-    secrets:
-      HAWK_API_KEY: ${{ secrets.HAWK_API_KEY }}
+#    uses: ./.github/workflows/run-dast-tools.yml
+#    secrets:
+#      HAWK_API_KEY: ${{ secrets.HAWK_API_KEY }}
